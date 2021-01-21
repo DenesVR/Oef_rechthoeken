@@ -10,9 +10,9 @@ class Rectangle {
         this.setStyling();
         this.setupEvents();
     }
-    // static getDistance(rechthoek1, rechthoek2) {
-    //     return Math.abs(rechthoek1._x - rechthoek2._x);
-    // }
+    static getDistance(rechthoek1, rechthoek2) {
+        return Math.abs(rechthoek1._x - rechthoek2._x);
+    }
 
     generateInitialHTML() {
         document.body.insertAdjacentHTML(
@@ -71,5 +71,7 @@ class Rectangle {
 
 
 const rechthoek1 = new Rectangle(100, 100, 20, 50);
-const rechthoek2 = new Rectangle(100, 100, 200, 200);
+const rechthoek2 = new Rectangle(300, 70, 200, 200);
 console.log(rechthoek1.getOppervlakte());
+console.log(rechthoek2.getOppervlakte());
+console.log(Rectangle.getDistance(rechthoek1, rechthoek2));
