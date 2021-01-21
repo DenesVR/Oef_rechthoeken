@@ -1,4 +1,4 @@
-var randomColor = require("random-color");
+const randomColor = require('randomcolor');
 
 class Rectangle {
     constructor(w, h, x, y) {
@@ -8,7 +8,6 @@ class Rectangle {
         this._y = y;
         this._ref = this.generateInitialHTML();
         this.setStyling();
-        this.background();
     }
 
     generateInitialHTML() {
@@ -27,13 +26,9 @@ class Rectangle {
             top: this._y + "px",
             width: this._w + "px",
             height: this._h + "px",
-            backgroundColor: randomColor()
+            backgroundColor: randomColor.randomColor()
         };
         Object.assign(this._ref.style, styles);
-    }
-
-    background() {
-        return this._ref.style.backgroundColor = randomColor();
     }
 
     get width() {
@@ -50,20 +45,6 @@ class Rectangle {
         this._h = waarde;
         this.setStyling();
     }
-    // get left() {
-    //     return this._x + "px";
-    // }
-    // set left(waarde) {
-    //     this._x = waarde;
-    //     this.setStyling();
-    // }
-    // get top() {
-    //     return this._y + "px";
-    // }
-    // set top(waarde) {
-    //     this._y = waarde;
-    //     this.setStyling();
-    // }
 
     set position(coordinate) {
         const arr = coordinate.replace(" ", "").split(",");
@@ -75,4 +56,4 @@ class Rectangle {
 
 
 const rec1 = new Rectangle(100, 100, 20, 50);
-const vierkant2 = new Rectangle(100, 100, 200, 200);
+const rec2 = new Rectangle(100, 100, 200, 200);
