@@ -8,7 +8,11 @@ class Rectangle {
         this._y = y;
         this._ref = this.generateInitialHTML();
         this.setStyling();
+        this.setupEvents();
     }
+    // static getDistance(rechthoek1, rechthoek2) {
+    //     return Math.abs(rechthoek1._x - rechthoek2._x);
+    // }
 
     generateInitialHTML() {
         document.body.insertAdjacentHTML(
@@ -29,6 +33,12 @@ class Rectangle {
             backgroundColor: randomColor.randomColor()
         };
         Object.assign(this._ref.style, styles);
+    }
+
+    setupEvents() {
+        this._ref.onclick = () => {
+            this.setStyling();
+        };
     }
 
     get width() {
@@ -52,8 +62,14 @@ class Rectangle {
         this._y = arr[1];
         this.setStyling();
     }
+
+    getOppervlakte() {
+        return this._w * this._h;
+    }
+
 }
 
 
-const rec1 = new Rectangle(100, 100, 20, 50);
-const rec2 = new Rectangle(100, 100, 200, 200);
+const rechthoek1 = new Rectangle(100, 100, 20, 50);
+const rechthoek2 = new Rectangle(100, 100, 200, 200);
+console.log(rechthoek1.getOppervlakte());
