@@ -1,3 +1,7 @@
+# surge deployment link
+
+https://denes-rectangle.surge.sh/
+
 # icons in project
 
 https://icomoon.io/app/
