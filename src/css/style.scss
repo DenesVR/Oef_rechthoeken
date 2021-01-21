@@ -1,0 +1,10 @@
+@use "./base/variables" as *;
+@use "./base/reset";
+@use "./base/fonts";
+@use "./base/mixins" as *;
+
+@import "../../icons/style";
+
+body {
+  background-color: $pink;
+}
