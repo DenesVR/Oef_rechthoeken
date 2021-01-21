@@ -1,3 +1,5 @@
+import "../../icons/svgxuse";
+
 const randomColor = require('randomcolor');
 
 class Rectangle {
@@ -11,7 +13,9 @@ class Rectangle {
         this.setupEvents();
     }
     static getDistance(rechthoek1, rechthoek2) {
-        return Math.abs(rechthoek1._x - rechthoek2._x);
+        // return Math.abs(rechthoek1._x - rechthoek2._x);
+        //Poging tot afstand berekenen
+        return Math.abs(Math.sqrt((rechthoek1._x - rechthoek1._y) ** 2 + (rechthoek2._x - rechthoek2._y) ** 2));
     }
 
     generateInitialHTML() {
@@ -26,8 +30,8 @@ class Rectangle {
 
     setStyling() {
         const styles = {
-            left: this._x + "px",
-            top: this._y + "px",
+            left: this._x - this._w / 2 + "px",
+            top: this._y - this._h / 2 + "px",
             width: this._w + "px",
             height: this._h + "px",
             backgroundColor: randomColor.randomColor()
@@ -70,8 +74,11 @@ class Rectangle {
 }
 
 
-const rechthoek1 = new Rectangle(100, 100, 20, 50);
-const rechthoek2 = new Rectangle(300, 70, 200, 200);
+const rechthoek1 = new Rectangle(100, 100, 120, 150);
+const rechthoek2 = new Rectangle(300, 70, 400, 200);
+console.log("Oppervlakte rechthoek 1:");
 console.log(rechthoek1.getOppervlakte());
+console.log("Oppervlakte rechthoek 2:");
 console.log(rechthoek2.getOppervlakte());
+console.log("Afstand tussen rechthoeken:");
 console.log(Rectangle.getDistance(rechthoek1, rechthoek2));
